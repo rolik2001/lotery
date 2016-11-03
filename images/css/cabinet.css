@@ -1,0 +1,123 @@
+body, html, main {
+    height: 100%;
+    margin: 0;
+}
+
+body {}
+  .title{
+    position: absolute;
+    top: 2.5%;
+    left: 27.5%;
+    font-size:200%;
+    color:white;
+  }
+.fon {
+    min-height: 100%;
+    background-size: 100% 100%;
+}
+
+.fon.photo-1 {
+    background-image: url("/fon.png");
+    background-attachment: fixed;
+    min-height: 100%;
+    ;
+}
+
+.img {
+    position: absolute;
+    top: 25%;
+    left: 17.5%;
+}
+
+.User {
+    position: absolute;
+    top: -5%;
+    left: 120%;
+    color: white;
+}
+
+.User-1 {
+    position: absolute;
+    top: -5%;
+    left: 200%;
+    color: #00FF00;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.id {
+    position: absolute;
+    top: 15%;
+    left: 120%;
+    color: white;
+}
+
+.id-2 {
+    position: absolute;
+    top: 15%;
+    left: 140%;
+    color: white;
+}
+
+.id-3 {
+    position: absolute;
+    top: 11%;
+    left: 200%;
+    color: #00FF00;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 200%;
+}
+
+.email {
+    position: absolute;
+    top: 35%;
+    left: 120%;
+    color: white;
+}
+
+.email-1 {
+    position: absolute;
+    top: 35%;
+    left: 200%;
+    color: #00FF00;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 150%;
+}
+
+.bal {
+    position: absolute;
+    top: 55%;
+    left: 120%;
+    color: white;
+}
+
+.balance-1 {
+    position: absolute;
+    top: 52.5%;
+    left: 200%;
+    color: #00FF00;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 180%;
+}
+
+h1 {
+    font-family: "Times New Roman", Times, serif;
+}
+.tickets{
+  position: absolute;
+  top: 75%;
+  left: 120%;
+  color: white;
+}
+.tickets-1{
+  position: absolute;
+  top: 73%;
+  left: 200%;
+  color: #00FF00;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 175%;
+}
+.play {
+  position: absolute;
+  top: 71%;
+  left:42.5%
+}
