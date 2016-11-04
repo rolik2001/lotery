@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex">
+    <title>Contracts</title>
+    <link rel="stylesheet" type="text/css" href="/css/games.css">
+    <link rel="stylesheet" type="text/css" href="/css/games2.css">
+    <script src='http://code.jquery.com/jquery-1.11.0.js'></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <b>Contracts</b>
+        </div>
+        <p class="menuUp"><a href="/">Головна</a></p>
+        <p class="menuUp"><a href="/cabinet">Профiль</a></p>
+        <div class="menuHead">
+            <ul id="menuHead">
+            </ul>
+        </div>
+    </header>
+
+    <div class="divv">
+        <ul id="carusel">
+
+        </ul>
+    </div>
+
+
+    <p></p>
+    <script>
+        $(function() {
+            function random(min, max, l) {
+                var arr = [],
+                    m = [],
+                    n = 0;
+                if (max - min < l - 1) return;
+                for (var i = 0; i <= (max - min); i++) m[i] = i + min;
+                for (var i = 0; i < l; i++) {
+                    n = Math.floor(Math.random() * (m.length));
+                    arr[i] = m.splice(n, 1)[0];
+                };
+                return arr
+            }
+
+
+            var arr = random(0, 36, 37),
+                carusel = $('#carusel');
+
+            function rand(min, max, integer) {
+                var r = Math.random() * (max - min) + min;
+                return integer ? r | 0 : r;
+            }
+
+            $.each(arr, function(indx, el) {
+                $('<li/>', {
+                    text: el,
+                    data: {
+                        i: el
+                    },
+                    css: {
+                        'background-color': el ? el % 2 ? '#ff513f' : '#1b1d2b' : '#86b817'
+                    },
+                    color: el ? 'white' : 'black'
+                }).appendTo(carusel)
+                carusel.width('+=60')
+            });
+
+            function lotto() {
+                var n = rand(0, arr.length, true);
+
+                r = rand(2, 5, true);
+
+                carusel.stop();
+                (function go() {
+                    carusel.animate({
+                            left: '-=50',
+                        }, 50,
+                        function() {
+                            var li = $('li:first');
+                            data = $('#carusel>li:eq(5)').data('i');
+                            if (data == n) r--;
+
+
+                            li.appendTo(carusel)
+                            carusel.css({
+                                left: '0px'
+                            });
+                            r && go();
+
+                            if (!r) {
+                                $('#carusel>li:eq(4)').css({
+                                    "border": "#86B817 3px solid"
+                                });
+                            }
+                        })
+                }())
+
+
+            }
+            // $('[type="button"]').click(lotto())
+            var a = 100;
+            if (a > 0) {
+                lotto();
+            } else {
+              console.log("lol")
+            }
+            // $('[type="button"]').trigger({click : lotto})//lotto() функція яка виклає одразу =) пів дня в сраку
+
+
+        })
+    </script>
+        <form action="/play" method="post">
+            <div class="input">
+                <p><label for="bets"><font color="white" face="Lucida Sans Unicode">tickets</font></label></p>
+                <input type="bets" id="bets" name="bets">
+            </div>
+            <p><button type="submit">Buy tickets</button></p>
+        </form>
+        <script>
+            var a = 2;
+            if (a == 1) {
+                alert("Start game")
+            } else if (a == 2) {
+                function notifyMe(n,m) {
+                    if (!("Notification" in window)) {
+                        alert("This browser does not support desktop notification");
+                    } else if (Notification.permission === "granted") {
+                        var notification = new Notification("Yooh! Player with id"+""+n+" "+",username"+" "+m);
+                    } else if (Notification.permission !== 'denied') {
+                        Notification.requestPermission(function(permission) {
+                            if (permission === "granted") {
+                                var notification = new Notification("Yooh! Player with id"+""+n+" "+",username"+" "+m);
+                            }
+                        });
+                    }
+
+                }
+                notifyMe("lol","tolya");
+                console.log("lol");
+            }; -->
+
+        <!-- </script>
+        <script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+	<script>
+	var socket = io.connect('http://localhost:80');
+	socket.on('eventClient', function (data) {
+		console.log(data);
+	});
+	socket.emit('eventServer', { data: 'Hello Server' });
+	</script>
+</body>

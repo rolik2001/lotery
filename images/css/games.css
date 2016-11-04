@@ -1,0 +1,72 @@
+body{
+    background-image: url("/fon.png");
+    background-attachment: fixed;
+
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    width: 100%;
+    float: left;
+    height: 60px;
+    margin: 0px auto;
+    background: rgba(21, 96, 148,.7);
+  }
+  div.logo {
+    width: 205px;
+    float: left;
+
+    color: white;
+    font-size: 35px;
+    font-family: Times New Roman, sans-serif;
+    margin-top: 8px;
+    margin-left: 10px;
+  }
+  div.menuHead
+     ul {
+
+	 height: 100em;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+  }
+  #menuHead a {
+    padding-top: 8px;
+    height: 25px;
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+  #menuHead a:hover{
+    color: red;
+  }
+   li {
+    color: white;
+    font-family: 'airborne',Arial,sans-serif;
+    margin-top: 12px;
+    float:left;
+    margin-right:16px;
+  }
+  @font-face {
+      font-family: airborne;
+      src: url(fonts/airborne.ttf);
+     }
+
+ .menuUp{
+	 margin-top: 22px;
+	 display:inline-block;
+	 padding-left:1em;
+	 color:white;
+	 text-decoration:none;
+ }
+ .menuUp a {
+	 color: white;
+	 text-decoration: none;
+	 font-family: 'airborne',Arial,sans-serif;
+ }
+
+ .menuUp a:hover{
+	 color: red;
+ }
